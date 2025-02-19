@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Criar Anúncio - SafeTrade</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Criar Anúncio</h1>
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="como-funciona.html">Como Funciona</a> |
+        <a href="termos-de-uso.html">Termos de Uso</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Preencha o Formulário:</h2>
+        <form action="https://formspree.io/f/seu-email-aqui" method="POST">
+          <label for="type">Tipo de Transação:</label>
+          <select id="type" name="type" required>
+            <option value="compra">Compra</option>
+            <option value="venda">Venda</option>
+          </select>
+
+          <label for="crypto">Criptomoeda:</label>
+          <input type="text" id="crypto" name="crypto" placeholder="Ex.: Bitcoin, Ethereum" required>
+
+          <label for="amount">Quantidade:</label>
+          <input type="number" id="amount" name="amount" placeholder="Ex.: 0.5" required>
+
+          <label for="payment">Método de Pagamento:</label>
+          <input type="text" id="payment" name="payment" placeholder="Ex.: Transferência Bancária, PIX" required>
+
+          <button type="submit">Publicar Anúncio</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 SafeTrade. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

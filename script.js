@@ -17,3 +17,25 @@ async function fetchCryptoPrices() {
 
 // Chamar a função ao carregar a página
 fetchCryptoPrices();
+
+// Função para filtrar anúncios
+function filtrarAnuncios() {
+  const cryptoFilter = document.getElementById('filter-crypto').value;
+  const paymentFilter = document.getElementById('filter-payment').value;
+  const adsContainer = document.getElementById('ads-container');
+  const ads = adsContainer.children;
+
+  for (let ad of ads) {
+    const crypto = ad.getAttribute('data-crypto');
+    const payment = ad.getAttribute('data-payment');
+
+    if (
+      (cryptoFilter === 'all' || crypto === cryptoFilter) &&
+      (paymentFilter === 'all' || payment === paymentFilter)
+    ) {
+      ad.style.display = 'block';
+    } else {
+      ad.style.display = 'none';
+    }
+  }
+}

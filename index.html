@@ -33,7 +33,7 @@
       <!-- Seção de Preços -->
       <section id="crypto-prices">
         <h2>Preços Atuais de Criptomoedas:</h2>
-        <table style="width: 100%; border-collapse: collapse;">
+        <table>
           <thead>
             <tr>
               <th>Criptomoeda</th>
@@ -42,22 +42,39 @@
           </thead>
           <tbody>
             <tr>
-              <td>Bitcoin (BTC)</td>
+              <td><strong>Bitcoin (BTC)</strong></td>
               <td id="btc-price">Carregando...</td>
             </tr>
             <tr>
-              <td>Ethereum (ETH)</td>
+              <td><strong>Ethereum (ETH)</strong></td>
               <td id="eth-price">Carregando...</td>
             </tr>
             <tr>
-              <td>Tether (USDT)</td>
+              <td><strong>Tether (USDT)</strong></td>
               <td id="usdt-price">Carregando...</td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      <!-- Seção Como Funciona -->
-      <section id="como-funciona">
-        <h2>Bem-vindo ao SafeTrade</h2>
-        <p>Compre
+      <!-- Seção de Chamada à Ação -->
+      <section id="call-to-action">
+        <div style="text-align: center;">
+          <h2>Inicie Suas Negociações Agora!</h2>
+          <p>Negocie criptomoedas diretamente com outras pessoas de forma segura e fácil.</p>
+          <button class="custom-btn" onclick="window.location.href='criar-anuncio.html'">Criar Anúncio</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé Simplificado -->
+    <footer>
+      <div style="text-align: center; padding: 20px;">
+        <p>&copy; 2023 SafeTrade. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Script para carregar preços -->
+    <script src="script.js"></script>
+  </body>
+</html>

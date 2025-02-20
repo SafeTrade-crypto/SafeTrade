@@ -1,62 +1,115 @@
-/* Reset de estilos */
-body, h1, h2, p, ul, ol, li {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Configurações gerais */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 header {
-    background-color: #0074D9; /* Azul claro */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+  background-color: #0074D9; /* Azul claro */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
 
 nav {
-    background-color: #2ECC40; /* Verde suave */
-    padding: 10px 0;
-    text-align: center;
+  background-color: #2ECC40; /* Verde suave */
+  padding: 10px 0;
+  text-align: center;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
 }
 
 main {
-    padding: 20px;
+  padding: 20px;
 }
 
 footer {
-    background-color: #0074D9; /* Azul claro */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  background-color: #0074D9; /* Azul claro */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
+/* Estilização de botões */
 button {
-    background-color: #2ECC40; /* Verde suave */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+  background-color: #2ECC40; /* Verde suave */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0074D9; /* Azul claro ao passar o mouse */
+  background-color: #0074D9; /* Azul ao passar o mouse */
+}
+
+/* Estilização de seções */
+section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #0074D9; /* Títulos em azul */
+  margin-bottom: 10px;
+}
+
+/* Estilização de formulários */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav a {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  form {
+    max-width: 100%;
+  }
 }

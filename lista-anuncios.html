@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Header com o título principal -->
+    <!-- Header -->
     <header>
       <h1>Lista de Anúncios</h1>
     </header>
@@ -22,21 +22,42 @@
       <a href="criar-anuncio.html">Criar Anúncio</a> |
       <a href="lista-anuncios.html">Lista de Anúncios</a> |
       <a href="termos-de-uso.html">Termos de Uso</a> |
-      <a href="faq.html">FAQ</a>
+      <a href="faq.html">FAQ</a> |
+      <a href="sobre-nos.html">Sobre Nós</a>
     </nav>
 
     <!-- Conteúdo Principal -->
     <main>
+      <!-- Filtro -->
       <section>
+        <h2>Filtrar Anúncios:</h2>
+        <label for="filter-crypto">Criptomoeda:</label>
+        <select id="filter-crypto" onchange="filtrarAnuncios()">
+          <option value="all">Todas</option>
+          <option value="BTC">Bitcoin (BTC)</option>
+          <option value="ETH">Ethereum (ETH)</option>
+          <option value="USDT">Tether (USDT)</option>
+        </select>
+
+        <label for="filter-payment">Método de Pagamento:</label>
+        <select id="filter-payment" onchange="filtrarAnuncios()">
+          <option value="all">Todos</option>
+          <option value="bank">Transferência Bancária</option>
+          <option value="pix">PIX</option>
+        </select>
+      </section>
+
+      <!-- Lista de Anúncios -->
+      <section id="ad-list">
         <h2>Anúncios Disponíveis:</h2>
-        <ul>
-          <li>
+        <ul id="ads-container">
+          <li data-crypto="BTC" data-payment="bank">
             <strong>Venda de Bitcoin</strong> - 0.5 BTC por $15,000 USD | Método: Transferência Bancária
           </li>
-          <li>
+          <li data-crypto="ETH" data-payment="pix">
             <strong>Compra de Ethereum</strong> - Compro 2 ETH por $3,000 USD | Método: PIX
           </li>
-          <li>
+          <li data-crypto="USDT" data-payment="bank">
             <strong>Venda de Tether</strong> - 100 USDT por $100 USD | Método: Transferência Bancária
           </li>
         </ul>
@@ -47,5 +68,29 @@
     <footer>
       <p>&copy; 2023 SafeTrade. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Script para Filtragem -->
+    <script>
+      function filtrarAnuncios() {
+        const cryptoFilter = document.getElementById('filter-crypto').value;
+        const paymentFilter = document.getElementById('filter-payment').value;
+        const adsContainer = document.getElementById('ads-container');
+        const ads = adsContainer.children;
+
+        for (let ad of ads) {
+          const crypto = ad.getAttribute('data-crypto');
+          const payment = ad.getAttribute('data-payment');
+
+          if (
+            (cryptoFilter === 'all' || crypto === cryptoFilter) &&
+            (paymentFilter === 'all' || payment === paymentFilter)
+          ) {
+            ad.style.display = 'block';
+          } else {
+            ad.style.display = 'none';
+          }
+        }
+      }
+    </script>
   </body>
 </html>

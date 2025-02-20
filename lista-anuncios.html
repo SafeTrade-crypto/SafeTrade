@@ -23,50 +23,39 @@
       <a href="lista-anuncios.html">Lista de Anúncios</a> |
       <a href="termos-de-uso.html">Termos de Uso</a> |
       <a href="faq.html">FAQ</a> |
-      <a href="sobre-nos.html">Sobre Nós</a>
+      <a href="sobre-nos.html">Sobre Nós</a> |
+      <a href="login.html">Login</a>
     </nav>
 
     <!-- Conteúdo Principal -->
     <main>
-      <!-- Filtro -->
       <section>
-        <h2>Filtrar Anúncios:</h2>
-        <label for="filter-crypto">Criptomoeda:</label>
-        <select id="filter-crypto" onchange="filtrarAnuncios()">
-          <option value="all">Todas</option>
-          <option value="BTC">Bitcoin (BTC)</option>
-          <option value="ETH">Ethereum (ETH)</option>
-          <option value="USDT">Tether (USDT)</option>
-        </select>
-
-        <label for="filter-payment">Método de Pagamento:</label>
-        <select id="filter-payment" onchange="filtrarAnuncios()">
-          <option value="all">Todos</option>
-          <option value="bank">Transferência Bancária</option>
-          <option value="pix">PIX</option>
-        </select>
-      </section>
-
-      <!-- Lista de Anúncios -->
-      <section id="ad-list">
         <h2>Anúncios Disponíveis:</h2>
-        <ul id="ads-container">
-          <li data-crypto="BTC" data-payment="bank">
-            <strong>Venda de Bitcoin</strong> - 0.5 BTC por $15,000 USD | Método: Transferência Bancária
-          </li>
-          <li data-crypto="ETH" data-payment="pix">
-            <strong>Compra de Ethereum</strong> - Compro 2 ETH por $3,000 USD | Método: PIX
-          </li>
-          <li data-crypto="USDT" data-payment="bank">
-            <strong>Venda de Tether</strong> - 100 USDT por $100 USD | Método: Transferência Bancária
-          </li>
-        </ul>
+        <div id="ads-container">
+          <!-- Card de Anúncio -->
+          <div class="ad-card" data-crypto="BTC" data-payment="bank">
+            <h3>Venda de Bitcoin</h3>
+            <p>0.5 BTC por $15,000 USD | Método: Transferência Bancária</p>
+          </div>
+
+          <div class="ad-card" data-crypto="ETH" data-payment="pix">
+            <h3>Compra de Ethereum</h3>
+            <p>Compro 2 ETH por $3,000 USD | Método: PIX</p>
+          </div>
+
+          <div class="ad-card" data-crypto="USDT" data-payment="bank">
+            <h3>Venda de Tether</h3>
+            <p>100 USDT por $100 USD | Método: Transferência Bancária</p>
+          </div>
+        </div>
       </section>
     </main>
 
-    <!-- Rodapé -->
+    <!-- Rodapé Simplificado -->
     <footer>
-      <p>&copy; 2023 SafeTrade. Todos os direitos reservados.</p>
+      <div style="text-align: center; padding: 20px;">
+        <p>&copy; 2023 SafeTrade. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
     <!-- Script para Filtragem -->

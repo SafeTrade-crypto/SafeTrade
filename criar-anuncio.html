@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Header com o título principal -->
+    <!-- Header -->
     <header>
       <h1>Criar Anúncio</h1>
     </header>
@@ -22,14 +22,15 @@
       <a href="criar-anuncio.html">Criar Anúncio</a> |
       <a href="lista-anuncios.html">Lista de Anúncios</a> |
       <a href="termos-de-uso.html">Termos de Uso</a> |
-      <a href="faq.html">FAQ</a>
+      <a href="faq.html">FAQ</a> |
+      <a href="sobre-nos.html">Sobre Nós</a>
     </nav>
 
     <!-- Conteúdo Principal -->
     <main>
       <section>
         <h2>Preencha o Formulário:</h2>
-        <form action="https://formspree.io/f/seu-email-aqui" method="POST">
+        <form action="https://formspree.io/f/seu-email-aqui" method="POST" onsubmit="return validarFormulario()">
           <label for="type">Tipo de Transação:</label>
           <select id="type" name="type" required>
             <option value="compra">Compra</option>
@@ -40,7 +41,7 @@
           <input type="text" id="crypto" name="crypto" placeholder="Ex.: Bitcoin, Ethereum" required>
 
           <label for="amount">Quantidade:</label>
-          <input type="number" id="amount" name="amount" placeholder="Ex.: 0.5" required>
+          <input type="number" id="amount" name="amount" placeholder="Ex.: 0.5" required min="0.001" step="0.001">
 
           <label for="payment">Método de Pagamento:</label>
           <input type="text" id="payment" name="payment" placeholder="Ex.: Transferência Bancária, PIX" required>
@@ -54,5 +55,20 @@
     <footer>
       <p>&copy; 2023 SafeTrade. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Script de Validação -->
+    <script>
+      function validarFormulario() {
+        const crypto = document.getElementById('crypto').value.trim();
+        const amount = parseFloat(document.getElementById('amount').value);
+
+        if (!crypto || amount <= 0) {
+          alert('Por favor, preencha todos os campos corretamente.');
+          return false;
+        }
+
+        return true;
+      }
+    </script>
   </body>
 </html>

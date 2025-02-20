@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Header com o título principal -->
+    <!-- Header -->
     <header>
       <h1>Bem-vindo ao SafeTrade</h1>
       <p>O marketplace seguro para comprar e vender criptomoedas.</p>
@@ -23,7 +23,8 @@
       <a href="criar-anuncio.html">Criar Anúncio</a> |
       <a href="lista-anuncios.html">Lista de Anúncios</a> |
       <a href="termos-de-uso.html">Termos de Uso</a> |
-      <a href="faq.html">FAQ</a>
+      <a href="faq.html">FAQ</a> |
+      <a href="sobre-nos.html">Sobre Nós</a>
     </nav>
 
     <!-- Conteúdo Principal -->
@@ -31,9 +32,28 @@
       <!-- Seção de Preços -->
       <section id="crypto-prices">
         <h2>Preços Atuais de Criptomoedas:</h2>
-        <p id="btc-price">Carregando...</p>
-        <p id="eth-price">Carregando...</p>
-        <p id="usdt-price">Carregando...</p>
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th>Criptomoeda</th>
+              <th>Preço (USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bitcoin (BTC)</td>
+              <td id="btc-price">Carregando...</td>
+            </tr>
+            <tr>
+              <td>Ethereum (ETH)</td>
+              <td id="eth-price">Carregando...</td>
+            </tr>
+            <tr>
+              <td>Tether (USDT)</td>
+              <td id="usdt-price">Carregando...</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
       <!-- Seção Como Funciona -->
